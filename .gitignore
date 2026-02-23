@@ -5,3 +5,6 @@ __pycache__/
 *.zip
 .DS_Store
 *.h5
+features/
+preprocessing/
+dataset/
