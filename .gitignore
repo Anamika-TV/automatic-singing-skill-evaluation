@@ -1,10 +1,25 @@
+# Environments and Cache
 venv/
 __pycache__/
+.env
+
+# Audio and Compressed Data
 *.wav
 *.mp3
 *.zip
-.DS_Store
+*.rar
+
+# Model Weights and Large Binary Files
 *.h5
+*.pkl
+*.npy
+
+# Project-Specific Data Folders
 features/
 preprocessing/
 dataset/
+
+# System and IDE Files
+.DS_Store
+.vscode/
+*.log
