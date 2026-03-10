@@ -306,7 +306,7 @@
         <!-- Header -->
         <div class="header">
             <h1>🎤 Automatic Singing Skill Evaluation System</h1>
-            <p>Using CNN-LSTM & Engineered Features | 50% Presentation Demo</p>
+            <p>Using CNN-LSTM & Engineered Features </p>
             <p><small>Dataset: 92 samples | 3 Classes: Bad (0-3), Intermediate (4-7), Good (8-10)</small></p>
         </div>
         
@@ -337,7 +337,7 @@
         </div>
         
         <div class="footer">
-            <p>Automatic Singing Skill Evaluation using CNN-LSTM | 50% Presentation</p>
+            <p>Automatic Singing Skill Evaluation using CNN-LSTM</p>
         </div>
     </div>
     
@@ -540,7 +540,7 @@
             // CNN Classification row
             html += `
                 <tr>
-                    <td class="model-name">CNN-LSTM Classification</td>
+                    <td class="model-name">CNN-Based Classification Network</td>
                     <td>Classification</td>
                     <td class="metric-low">~35.7% (5/14)</td>
                     <td class="metric-low">~37.5%</td>
@@ -573,7 +573,7 @@
                 </tr>
             `;
             
-            html += `
+            html += ` 
                     </tbody>
                 </table>
             `;
@@ -608,7 +608,7 @@
                         
                         <!-- CNN Classification Card -->
                         <div style="background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                            <h3 style="margin: 0 0 15px 0; color: #2c3e50; font-size: 18px; font-weight: 500;">CNN-LSTM CLASSIFICATION</h3>
+                            <h3 style="margin: 0 0 15px 0; color: #2c3e50; font-size: 18px; font-weight: 500;">CNN-BASED CLASSIFICATION NETWORK</h3>
                             <table style="width: 100%; border-collapse: collapse;">
                                 <tr style="border-bottom: 1px solid #ecf0f1;">
                                     <td style="padding: 8px 0; color: #7f8c8d;">Predictions</td>
@@ -659,9 +659,6 @@
                                     <td style="padding: 8px 0; color: #7f8c8d;">Mean Accuracy</td>
                                     <td style="padding: 8px 0; font-weight: 500;">44.6%</td>
                                 </tr>
-                                <tr>
-                                    <td style="padding: 8px 0; color: #7f8c8d;">Std Deviation</td>
-                                </tr>
                             </table>
                         </div>
                     </div>
@@ -674,27 +671,16 @@
                             <div>
                                 <p style="margin: 0 0 15px 0; display: flex; align-items: center;">
                                     <span style="display: inline-block; width: 8px; height: 8px; background: #e74c3c; border-radius: 50%; margin-right: 10px;"></span>
-                                    <strong style="width: 140px;">CNN-LSTM Models:</strong>
+                                    <strong style="width: 104px;">CNN Models:</strong>
                                     <span style="color: #7f8c8d; margin-left: 10px;">Struggle with small dataset (92 samples)</span>
                                 </p>
                                 <p style="margin: 0 0 15px 0; display: flex; align-items: center;">
                                     <span style="display: inline-block; width: 8px; height: 8px; background: #27ae60; border-radius: 50%; margin-right: 10px;"></span>
-                                    <strong style="width: 140px;">Engineered Features:</strong>
+                                    <strong style="width: 165px;">Engineered Features:</strong>
                                     <span style="color: #7f8c8d; margin-left: 10px;">Best performance: 60.9% accuracy</span>
                                 </p>
                             </div>
-                            <div>
-                                <p style="margin: 0 0 15px 0; display: flex; align-items: center;">
-                                    <span style="display: inline-block; width: 8px; height: 8px; background: #3498db; border-radius: 50%; margin-right: 10px;"></span>
-                                    <strong style="width: 140px;">K-Fold Validation:</strong>
-                                    <span style="color: #7f8c8d; margin-left: 10px;">Realistic estimate: 44.6%</span>
-                                </p>
-                                <p style="margin: 0; display: flex; align-items: center;">
-                                    <span style="display: inline-block; width: 8px; height: 8px; background: #f39c12; border-radius: 50%; margin-right: 10px;"></span>
-                                    <strong style="width: 140px;">vs Random Guess:</strong>
-                                    <span style="color: #7f8c8d; margin-left: 10px;">All models beat 33.3% baseline</span>
-                                </p>
-                            </div>
+
                         </div>
                         
                         <div style="margin-top: 25px; padding: 15px; background: #edf7ed; border-left: 4px solid #27ae60; border-radius: 4px;">
@@ -762,6 +748,11 @@
         function displayPrediction(data) {
             const html = `
                 <div class="prediction-result">
+                    <h4 style="margin-bottom:10px;">Uploaded Audio</h4>
+                    <audio controls style="width:36%; margin-bottom:20px;">
+                        <source src="${data.audio_url}" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
                     <h3 style="margin-bottom: 20px;">📊 Prediction Result</h3>
                     
                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 20px;">
@@ -812,14 +803,27 @@
                     </div>
                     
                     <div style="display: flex; gap: 10px; margin-top: 20px;">
-                        <button class="btn btn-green" onclick="showAudioTester()">Test Another</button>
-                        <button class="btn" onclick="selectOption(2)">View Comparison</button>
+                        <button class="btn btn-green" onclick="resetAudioTester()">Test Another</button>
                     </div>
                 </div>
             `;
             
             document.getElementById('predictionResult').innerHTML = html;
         }
+
+        function resetAudioTester() {
+            fetch('/api/delete_audio', { method: 'POST' })
+            .then(() => {
+                showAudioTester();
+            });
+
+        }
+
+        // Delete uploaded audio when page refreshes or closes
+        window.addEventListener("beforeunload", function () {
+            navigator.sendBeacon('/api/delete_audio');
+        });
+
     </script>
 </body>
 </html>

@@ -17,6 +17,8 @@ from tensorflow.keras import layers, models
 import warnings
 warnings.filterwarnings('ignore')
 
+last_uploaded_file = None
+
 app = Flask(__name__)
 
 # ==================== LOAD ALL TRAINED MODELS ====================
@@ -606,7 +608,7 @@ def get_models():
     return jsonify({
         'models': [
             {'id': 'cnn_regression', 'name': 'CNN-LSTM Regression'},
-            {'id': 'cnn_classification', 'name': 'CNN-LSTM Classification'},
+            {'id': 'cnn_classification', 'name': 'CNN-Based Classification Network'},
             {'id': 'engineered', 'name': 'Engineered Features + DNN'},
             {'id': 'engineered_kfold', 'name': 'Engineered Features + K-Fold CV'}
         ]
@@ -666,26 +668,47 @@ def get_model_results(model_id):
 
 @app.route('/api/predict', methods=['POST'])
 def predict():
-    """Predict for unknown audio using REAL model"""
+    global last_uploaded_file
+
     if 'audio' not in request.files:
         return jsonify({'error': 'No audio file'}), 400
     
     file = request.files['audio']
     if file.filename == '':
         return jsonify({'error': 'No file selected'}), 400
-    
-    # Save temporarily
-    temp_path = 'temp_audio.wav'
+
+    upload_folder = "static/uploads"
+    os.makedirs(upload_folder, exist_ok=True)
+
+    # Delete previous uploaded file
+    if last_uploaded_file and os.path.exists(last_uploaded_file):
+        os.remove(last_uploaded_file)
+
+    # Create unique filename
+    unique_name = f"audio_{np.random.randint(1000000)}.wav"
+    temp_path = os.path.join(upload_folder, unique_name)
+
     file.save(temp_path)
-    
-    # Get REAL prediction
+
+    # Update last file tracker
+    last_uploaded_file = temp_path
+
+    # Predict
     result = predictor.predict(temp_path)
-    
-    # Clean up
-    if os.path.exists(temp_path):
-        os.remove(temp_path)
-    
+
+    result['audio_url'] = f'/static/uploads/{unique_name}'
+
     return jsonify(result)
+
+@app.route('/api/delete_audio', methods=['POST'])
+def delete_audio():
+    global last_uploaded_file
+
+    if last_uploaded_file and os.path.exists(last_uploaded_file):
+        os.remove(last_uploaded_file)
+        last_uploaded_file = None
+
+    return jsonify({'status': 'deleted'})
 
 @app.route('/api/dataset_info')
 def dataset_info():
