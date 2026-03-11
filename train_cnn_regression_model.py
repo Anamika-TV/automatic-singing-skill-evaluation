@@ -145,5 +145,5 @@ print_predictions("TEST", X_test, y_test, fn_test)
 # -----------------------------
 # 7️⃣ Save Model
 # -----------------------------
-model.save("singing_skill_model.h5")
-print("\nModel saved as singing_skill_model.h5")
+#model.save("singing_skill_model.h5")
+#print("\nModel saved as singing_skill_model.h5")

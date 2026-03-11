@@ -1,0 +1,562 @@
+{
+  "train": [
+    {
+      "file": "Gs-cF50x0XY.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3425133526325226
+    },
+    {
+      "file": "puwBZShGYEE.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3388221263885498
+    },
+    {
+      "file": "xvBWOvVZ4K4.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.340788871049881
+    },
+    {
+      "file": "WoYYjaKZSzU.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.34597572684288025
+    },
+    {
+      "file": "V5SiSeVRgMA.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.34285488724708557
+    },
+    {
+      "file": "2YBsBTUf33Q.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.34094905853271484
+    },
+    {
+      "file": "GsvCwfSNJe0.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3387412130832672
+    },
+    {
+      "file": "3O76zdG-fMI.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.34089890122413635
+    },
+    {
+      "file": "SWbtALafXbw.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.342221736907959
+    },
+    {
+      "file": "ejMJZ5FLclE.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3381088376045227
+    },
+    {
+      "file": "0B9yeknTznc.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.34231412410736084
+    },
+    {
+      "file": "kbg_ffh6_24.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.34455883502960205
+    },
+    {
+      "file": "my7lAmlCvb8.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.34253761172294617
+    },
+    {
+      "file": "5qkd4jTkpR4.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.33912238478660583
+    },
+    {
+      "file": "ixLbyMJ24UQ.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3372916877269745
+    },
+    {
+      "file": "KRiG4zOxPjo.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.34126347303390503
+    },
+    {
+      "file": "0fBz_ec3Xuw.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.34250712394714355
+    },
+    {
+      "file": "HyIDvLqYONA.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.34274107217788696
+    },
+    {
+      "file": "7d0skExDf18.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3400782346725464
+    },
+    {
+      "file": "EzMPJE4pEvg.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3408617675304413
+    },
+    {
+      "file": "q8oQpfRJ5Rc.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3425418436527252
+    },
+    {
+      "file": "gZFDapzz_Xo.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3411335349082947
+    },
+    {
+      "file": "BWxEnoJaWYk.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3410969376564026
+    },
+    {
+      "file": "vvP9t6k8gp8.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3435077369213104
+    },
+    {
+      "file": "-BHDFxe_SiA.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3417673707008362
+    },
+    {
+      "file": "kkj5AvUUmJA.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3433462977409363
+    },
+    {
+      "file": "FtvkCWgjXoY.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.34614312648773193
+    },
+    {
+      "file": "1SgMlt9I728.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3396868109703064
+    },
+    {
+      "file": "D1V6OAM-PyU.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.34163305163383484
+    },
+    {
+      "file": "DM0fUouk7Fc.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3417145907878876
+    },
+    {
+      "file": "zq43weg6sjg.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3404539227485657
+    },
+    {
+      "file": "S3xg_uklQ-E.wav",
+      "actual": 0,
+      "predicted": 2,
+      "confidence": 0.3391641080379486
+    },
+    {
+      "file": "_bmNEUrlKCA.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3427296578884125
+    },
+    {
+      "file": "rHXldrsyBm8.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3414692282676697
+    },
+    {
+      "file": "GUgD6g0Cdc8.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.3419494926929474
+    },
+    {
+      "file": "qV33dfDRATw.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.33898696303367615
+    },
+    {
+      "file": "hBypYES5UYg.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.338706374168396
+    },
+    {
+      "file": "SsWLjtbQz2c.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.34088438749313354
+    },
+    {
+      "file": "LqdXokFoY8w.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3396132290363312
+    },
+    {
+      "file": "VzvIhqQstBc.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3412064015865326
+    },
+    {
+      "file": "QaoHNhTBDSM.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.33997371792793274
+    },
+    {
+      "file": "U7AyCZrvUZ8.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3407869040966034
+    },
+    {
+      "file": "OwBScNpggII.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3428070843219757
+    },
+    {
+      "file": "RI0FLIKuXeY.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.34243008494377136
+    },
+    {
+      "file": "qX9ih1XC7Vw.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.33960291743278503
+    },
+    {
+      "file": "mx0akFPKguw.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.3445085287094116
+    },
+    {
+      "file": "ddg65_henUE.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.3399668335914612
+    },
+    {
+      "file": "_L-fBQx1mZQ.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.33930858969688416
+    },
+    {
+      "file": "iTPm5O8xmeg.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.3412902355194092
+    },
+    {
+      "file": "Wp_qFcCb9Ao.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.34241798520088196
+    },
+    {
+      "file": "GMY3nQNjRMg.wav",
+      "actual": 2,
+      "predicted": 2,
+      "confidence": 0.34051579236984253
+    },
+    {
+      "file": "pHllTS1oIP0.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.33835482597351074
+    },
+    {
+      "file": "2itlXIPA1uM.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.34082120656967163
+    },
+    {
+      "file": "UqbCfqtvxh0.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.3450678586959839
+    },
+    {
+      "file": "gPy9ix5Xhc0.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.34315410256385803
+    },
+    {
+      "file": "zy-wvF3N2sY.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.33937546610832214
+    },
+    {
+      "file": "WXIqRbBJ1zA.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3381641209125519
+    },
+    {
+      "file": "LDL2tvLW3K8.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.3394940495491028
+    },
+    {
+      "file": "OdWQaPadXDE.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.34038668870925903
+    },
+    {
+      "file": "G5L0djDg1Oo.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.34160035848617554
+    },
+    {
+      "file": "0NgGDJmWMjc.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.33914077281951904
+    },
+    {
+      "file": "6n77Ib52kAw.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.34082353115081787
+    },
+    {
+      "file": "AD74tuCXS9s.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3418710231781006
+    },
+    {
+      "file": "ZQc7enIh0qY.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3431401550769806
+    }
+  ],
+  "val": [
+    {
+      "file": "m-5AV3nWbwM.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.3437347710132599
+    },
+    {
+      "file": "MZahX3pJ5GA.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3412385880947113
+    },
+    {
+      "file": "Q63OFMKfk_A.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3416255712509155
+    },
+    {
+      "file": "2Mw64gwlcEc.wav",
+      "actual": 2,
+      "predicted": 2,
+      "confidence": 0.3388479948043823
+    },
+    {
+      "file": "eWL5-_oB8tg.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.33733654022216797
+    },
+    {
+      "file": "5fpPvfY6EXM.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.342750608921051
+    },
+    {
+      "file": "NOG8HietO5w.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3403390049934387
+    },
+    {
+      "file": "pRpBx8kyaXY.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.34218329191207886
+    },
+    {
+      "file": "7QhfgP4s0W8.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.34388160705566406
+    },
+    {
+      "file": "pFPV25anyIA.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.33990395069122314
+    },
+    {
+      "file": "zMrEP1ZzW9U.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3395557105541229
+    },
+    {
+      "file": "EUuN_j7wnKo.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3405182957649231
+    },
+    {
+      "file": "YTilkcIHL7g.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3429366946220398
+    },
+    {
+      "file": "MQWTO_yKqq8.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3406450152397156
+    }
+  ],
+  "test": [
+    {
+      "file": "puNWmf7sXqA.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.33862200379371643
+    },
+    {
+      "file": "_IJcifaRpXI.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.34083351492881775
+    },
+    {
+      "file": "QLwUXYkF5zI.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.34125497937202454
+    },
+    {
+      "file": "_h3HSQ6I8DA.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.34253358840942383
+    },
+    {
+      "file": "R-5uWELAgjY.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3431709408760071
+    },
+    {
+      "file": "Ggc5rzi-p6Y.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.33751657605171204
+    },
+    {
+      "file": "lQcf-j-pN9g.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.33924829959869385
+    },
+    {
+      "file": "kFZ0yQ3KcYs.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.34788191318511963
+    },
+    {
+      "file": "agH500fFoPw.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.33965402841567993
+    },
+    {
+      "file": "om3YZ-i2234.wav",
+      "actual": 0,
+      "predicted": 0,
+      "confidence": 0.33908867835998535
+    },
+    {
+      "file": "qOLeqEVDjII.wav",
+      "actual": 2,
+      "predicted": 0,
+      "confidence": 0.3409455716609955
+    },
+    {
+      "file": "ipZt_r2ARTw.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.34264615178108215
+    },
+    {
+      "file": "93E4AOQFrk4.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3414505422115326
+    },
+    {
+      "file": "Lo9KR3PIVhM.wav",
+      "actual": 1,
+      "predicted": 0,
+      "confidence": 0.3434430658817291
+    }
+  ],
+  "test_accuracy": 0.2857142984867096,
+  "overall_accuracy": 0.2717391304347826
+}
