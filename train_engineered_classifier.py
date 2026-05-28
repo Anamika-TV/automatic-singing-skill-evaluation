@@ -4,6 +4,7 @@ from sklearn.preprocessing import StandardScaler
 import tensorflow as tf
 from tensorflow.keras import layers, models
 from tensorflow.keras.callbacks import EarlyStopping
+from sklearn.utils.class_weight import compute_class_weight
 
 # -------------------------
 # 1️⃣ Load Features
@@ -12,12 +13,6 @@ X = np.load("features/engineered_features.npy")
 y = np.load("features/engineered_labels.npy")
 
 print("Loaded feature shape:", X.shape)
-
-# -------------------------
-# 2️⃣ Normalize Features
-# -------------------------
-scaler = StandardScaler()
-X = scaler.fit_transform(X)
 
 # -------------------------
 # 3️⃣ Train / Val / Test Split
@@ -33,6 +28,34 @@ X_val, X_test, y_val, y_test = train_test_split(
 print("Train:", X_train.shape)
 print("Validation:", X_val.shape)
 print("Test:", X_test.shape)
+
+# -------------------------
+# 4️⃣ Normalize Features
+# -------------------------
+
+scaler = StandardScaler()
+
+X_train = scaler.fit_transform(X_train)
+X_val = scaler.transform(X_val)
+X_test = scaler.transform(X_test)
+
+# Also scale full dataset for overall accuracy
+X_all_scaled = scaler.transform(X)
+
+
+# compute class weight
+classes = np.unique(y_train)
+
+weights = compute_class_weight(
+    class_weight='balanced',
+    classes=classes,
+    y=y_train
+)
+
+class_weights = dict(zip(classes, weights))
+
+print("Class Weights:", class_weights)
+
 
 # -------------------------
 # 4️⃣ Build Dense Model
@@ -71,7 +94,8 @@ history = model.fit(
     validation_data=(X_val, y_val),
     epochs=100,
     batch_size=8,
-    callbacks=[early_stop]
+    callbacks=[early_stop],
+    class_weight=class_weights
 )
 
 # -------------------------
@@ -80,6 +104,22 @@ history = model.fit(
 test_loss, test_acc = model.evaluate(X_test, y_test)
 
 print("\nTest Accuracy:", test_acc)
+
+# -------------------------
+# Overall Accuracy (All 92 samples)
+# -------------------------
+
+pred_all = model.predict(X_all_scaled)
+
+y_pred_all = np.argmax(pred_all, axis=1)
+
+correct = np.sum(y_pred_all == y)
+
+total = len(y)
+
+overall_accuracy = correct / total
+
+print("\nOverall Accuracy (92 samples):", overall_accuracy)
 
 
 # -------------------------
@@ -148,6 +188,10 @@ for i in range(len(X_test)):
     print(f"Actual Class: {y_test[i]}")
     print(f"Predicted Class: {predicted_class}")
     print("-" * 30)
+
+# save scaler
+import joblib
+joblib.dump(scaler, "engineered_scaler.pkl")
 
 # Save model
 model.save("engineered_feature_classifier.keras")
