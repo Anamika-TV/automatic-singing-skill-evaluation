@@ -1,0 +1,55 @@
+CODE FOR
+===============>>
+
+
+-----------------------------------------------------------------------------------------------------------
+1. CONVERTING YOUTUBE LINK TO AUDIO (download utube video as audio)
+
+Your file containing YouTube links is song_links.txt
+You want all audio files saved in a folder named new_audio
+Output filenames should be the YouTube video IDs (e.g., EzMPJE4pEvg.wav)
+In PowerShell TERMINAL
+
+==============================================================================================================
+Get-Content songs_links.txt | % { yt-dlp -x --audio-format wav -o "dataset_two/new_audio/%(id)s.%(ext)s" $_ }
+            ---------------                                        ---------------------
+==============================================================================================================
+
+
+
+
+--------------------------------------------------------------------------
+2. DISPLAY IDS WITH .WAV EXTENSION FROM song_links.txt, run:
+
+==========================================================================
+Get-Content song_links.txt | ForEach-Object {
+    if ($_ -match '(?:shorts/|youtu\.be/)([A-Za-z0-9_-]{11})') {
+        Write-Output "$($matches[1]).wav"
+    }
+}
+
+==========================================================================
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+3. TO GET THE MISSING FILE NAME AND COUNT
+
+=================================================================================================================
+
+$csvFiles = Import-Csv "dataset_two/labels.csv" -Header filename,score | Select-Object -ExpandProperty filename
+
+$downloadedFiles = Get-ChildItem "dataset_two/new_audio" -Filter "*.wav" | Select-Object -ExpandProperty Name
+
+$missingFiles = $csvFiles | Where-Object { $_ -notin $downloadedFiles }
+
+Write-Host ""
+Write-Host "====================================="
+Write-Host "Missing Files Count: $($missingFiles.Count)"
+Write-Host "====================================="
+Write-Host ""
+
+$missingFiles
+
+==================================================================================================================

@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Input and output file paths
-INPUT_FILE = "dataset/labels.csv"
-OUTPUT_FILE = "dataset/labels_classification.csv"
+INPUT_FILE = "dataset_two/labels_two.csv"
+OUTPUT_FILE = "dataset_two/labels_two_classification.csv"
 
 # Load original regression labels
 df = pd.read_csv(INPUT_FILE, names=["filename", "score"])
