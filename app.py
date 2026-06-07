@@ -17,6 +17,7 @@ from tensorflow.keras import regularizers
 from tensorflow.keras import layers, models
 import warnings
 warnings.filterwarnings('ignore')
+import traceback
 
 last_uploaded_file = None
 app = Flask(__name__)
@@ -60,7 +61,7 @@ class ModelManager:
 
     def load_mel_spectrograms(self):
         try:
-            labels_df = pd.read_csv("dataset/labels.csv", names=["filename", "score"])
+            labels_df = pd.read_csv("dataset_two/labels_two.csv", names=["filename", "score"])
             X, y, filenames = [], [], []
             for _, row in labels_df.iterrows():
                 fname = row["filename"].replace(".wav", ".npy")
@@ -93,8 +94,14 @@ class ModelManager:
         try:
             X = np.load("features/engineered_features.npy")
             y = np.load("features/engineered_labels.npy")
-            labels_df = pd.read_csv("dataset/labels_classification.csv", names=["filename", "class"])
+
+            print("X shape:", X.shape)
+            print("y shape:", y.shape)
+
+            labels_df = pd.read_csv("dataset_two/labels_two_classification.csv", names=["filename", "class"])
             filenames = labels_df['filename'].values
+
+            print("filenames:", len(filenames))
 
             X_train, X_temp, y_train, y_temp, fn_train, fn_temp = train_test_split(
                 X, y, filenames, test_size=0.30, random_state=42)
@@ -116,7 +123,9 @@ class ModelManager:
             }
             print(f"✅ Loaded engineered features: {X.shape}")
         except Exception as e:
+            #print(f"❌ Error loading engineered data: {e}")
             print(f"❌ Error loading engineered data: {e}")
+            traceback.print_exc()
 
     # --- Prediction methods for each model ---
     def predict_regression(self, model_key, split='test'):
@@ -437,13 +446,25 @@ def delete_audio():
         last_uploaded_file = None
     return jsonify({'status': 'deleted'})
 
+
 @app.route('/api/dataset_info')
 def dataset_info():
-    """Get dataset information with correct distribution"""
+
+    labels_df = pd.read_csv(
+        "dataset_two/labels_two_classification.csv",
+        names=["filename", "class"]
+    )
+
+    counts = labels_df["class"].value_counts()
+
     return jsonify({
-        'total_samples': 92,
+        'total_samples': len(labels_df),
         'classes': ['Bad (0-3)', 'Intermediate (4-7)', 'Good (8-10)'],
-        'distribution': {'Bad': 23, 'Intermediate': 31, 'Good': 38}  # ← CORRECT VALUES
+        'distribution': {
+            'Bad': int(counts.get(0, 0)),
+            'Intermediate': int(counts.get(1, 0)),
+            'Good': int(counts.get(2, 0))
+        }
     })
 
 @app.route('/api/kfold_details')

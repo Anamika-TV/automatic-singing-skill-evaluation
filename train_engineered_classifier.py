@@ -119,7 +119,7 @@ total = len(y)
 
 overall_accuracy = correct / total
 
-print("\nOverall Accuracy (92 samples):", overall_accuracy)
+print("\nOverall Accuracy (204 samples):", overall_accuracy)
 
 
 # -------------------------

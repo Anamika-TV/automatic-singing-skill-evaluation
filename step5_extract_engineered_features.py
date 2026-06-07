@@ -4,7 +4,7 @@ import pandas as pd
 import os
 
 AUDIO_DIR = "preprocessing/3_rms_normalized"
-LABEL_FILE = "dataset/labels_classification.csv"
+LABEL_FILE = "dataset_two/labels_two_classification.csv"
 
 OUTPUT_FEATURE_FILE = "features/engineered_features.npy"
 OUTPUT_LABEL_FILE = "features/engineered_labels.npy"

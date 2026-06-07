@@ -2,7 +2,7 @@ import librosa
 import soundfile as sf
 import os
 
-INPUT_DIR = "dataset/raw_audio"
+INPUT_DIR = "dataset_two/raw_audio"
 OUTPUT_DIR = "preprocessing/1_silence_trimmed"
 
 SR = 22050

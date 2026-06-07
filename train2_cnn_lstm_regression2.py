@@ -11,7 +11,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 # 1️⃣ Load Dataset
 # -----------------------------
 FEATURE_DIR = "features/mel_spectrograms"
-LABEL_FILE = "dataset/labels.csv"
+LABEL_FILE = "dataset_two/labels_two.csv"
 
 labels_df = pd.read_csv(LABEL_FILE, names=["filename", "score"])
 

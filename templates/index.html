@@ -1014,7 +1014,7 @@
                     <div class="stats-box">
                         <h4>Model Performance</h4>
                         <p>Test Accuracy: ${(data.test_accuracy*100).toFixed(1)}%</p>
-                        <p>Overall Accuracy (92 samples): ${(data.overall_accuracy*100).toFixed(1)}%</p>
+                        <p>Overall Accuracy (204 samples): ${(data.overall_accuracy*100).toFixed(1)}%</p>
                     </div>
                 `;
             }
@@ -1086,6 +1086,11 @@
     // ==================== COMPARE PAGE ====================
     // ==================== COMPARE PAGE ====================
     async function loadComparison() {
+        const datasetInfo = await fetchAPI('/api/dataset_info');
+        const totalSamples = datasetInfo.total_samples;
+        const bad = datasetInfo.distribution.Bad;
+        const intermediate = datasetInfo.distribution.Intermediate;
+        const good = datasetInfo.distribution.Good;
         let html = `
             <div style="margin-bottom: 2rem;">
                 
@@ -1104,7 +1109,7 @@
                     
                     <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
                         <div>
-                            <div style="font-size: 2.5rem; font-weight: bold;">92</div>
+                            <div style="font-size: 2.5rem; font-weight: bold;">${totalSamples}</div>
                             <div style="font-size: 0.9rem; opacity: 0.9;">Total Samples</div>
                         </div>
                         <div>
@@ -1120,17 +1125,17 @@
                     <div style="margin-top: 1.5rem;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                             <span>Class Distribution</span>
-                            <span style="font-weight: 500;">23 : 31 : 38</span>
+                            <span style="font-weight: 500;">${bad} : ${intermediate} : ${good}</span>
                         </div>
                         <div style="display: flex; gap: 0.3rem; height: 12px; border-radius: 6px; overflow: hidden;">
-                            <div style="flex: 23; background: #e74c3c;"></div>
-                            <div style="flex: 31; background: #f39c12;"></div>
-                            <div style="flex: 38; background: #27ae60;"></div>
+                            <div style="flex: ${bad}; background: #e74c3c;"></div>
+                            <div style="flex: ${intermediate}; background: #f39c12;"></div>
+                            <div style="flex: ${good}; background: #27ae60;"></div>
                         </div>
                         <div style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.85rem;">
-                            <span>Bad (23)</span>
-                            <span>Intermediate (31)</span>
-                            <span>Good (38)</span>
+                            <span>Bad (${bad})</span>
+                            <span>Intermediate (${intermediate})</span>
+                            <span>Good (${good})</span>
                         </div>
                     </div>
                     
